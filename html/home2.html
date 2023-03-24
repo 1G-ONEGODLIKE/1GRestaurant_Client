@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- CSS & Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/addtocart.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul class="nav-content">
+      <li class="nav-list">
+        <a href="/html/home.html" class="link-item home-link">
+          <img class="link-icon" src="/images/ui/home.png">
+          <span class="link-text">Home</span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="#shop" class="link-item cart-link">
+          <img class="link-icon" src="/images/ui/cart.png">
+          <span class="link-text">Cart</span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="/html/login.html" class="link-item logout">
+          <img class="link-icon" src="/images/ui/logout.png">
+          <span class="link-text"></span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="#wallet" class="link-item message-link">
+          <img class="link-icon" src="/images/ui/message.png">
+          <span class="link-text">Message</span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="#user" class="link-item  profile-link">
+          <img class="link-icon" src="/images/ui/profile.png">
+          <span class="link-text">Profile</span>
+        </a>
+      </li>
+      <span class="indicator"></span>
+    </ul>
+  </nav>
+  <!-- Header -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+        <div class="header d-flex justify-content-between align-items-center">
+          <a href="home.html"><img src="/images/ui/backbutton.png" id="back-button"></a>
+          <h1 class="mb-0 ml-4 bold">Menu List (2)</h1>
+          <a href="home3.html"><img src="/images/ui/nextbutton.png" id="next-button"></a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Search Bar & Dropdown Menu -->
+  <div class="col-md-12">
+    <div class="search-bar d-flex justify-content-between align-items-center p-6">
+      <div class="d-flex justify-content-between align-items-center">
+        <input type="text" id="search-input" class="form-control ml-2" placeholder="Search for menu...">
+        <button type="button" id="search-button" class="btn btn-primary search-button">Search 🔍</button>
+        <button class="btn btn-primary dropdown-toggle category" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown">
+          <img src="/images/ui/transparent.png" class="transparent" /></button>
+        <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <!-- Dropdown Items -->
+          <a class="dropdown-item text-center" href="#" data-category="all">All food</a>
+          <a class="dropdown-item text-center" href="#" data-category="main">Main dish</a>
+          <a class="dropdown-item text-center" href="#" data-category="appetizer">Appetizer/Dessert</a>
+          <a class="dropdown-item text-center" href="#" data-category="drinks">Drinks</a>
+          <a class="dropdown-item text-center" href="#" data-category="diet">Diet</a>
+          <a class="dropdown-item text-center" href="#" data-category="promo">Promotion</a>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap mt-3 ml-2">
+      <div>
+        <div class="menu-item card category-selector" data-categories="all main">
+          <img src="/images/menu/vermicellisalad.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Vermicelli Salad</h3>
+            <p class="card-text text-center">ยำวุ้นเส้น</p>
+            <span class="price d-flex justify-content-center">65฿</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-item card category-selector" data-categories="all appetizer">
+          <img src="/images/menu/hamburger.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Beef Burgers</h3>
+            <p class="card-text text-center">แฮมเบอร์เกอร์เนื้อ</p>
+            <span class="price d-flex justify-content-center">80฿</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all main">
+        <img src="/images/menu/greencurry.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Green Curry</h3>
+          <p class="card-text text-center">แกงเขียวหวาน</p>
+          <span class="price d-flex justify-content-center">50฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all main">
+        <img src="/images/menu/katsucurry.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Katsu Curry</h3>
+          <p class="card-text text-center">แกงกะหรี่หมูทอด (คัตสึ)</p>
+          <span class="price d-flex justify-content-center">60฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all appetizer">
+        <img src="/images/menu/sushi.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Sushi Set</h3>
+          <p class="card-text text-center">เซ็ตซูชิสุดคุ้ม</p>
+          <span class="price d-flex justify-content-center">70฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all appetizer">
+        <img src="/images/menu/doughnut.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Doughnut</h3>
+          <p class="card-text text-center">โดนัท</p>
+          <span class="price d-flex justify-content-center">50฿</span>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap mt-3 ml-2">
+      <div>
+        <div class="menu-item card category-selector" data-categories="all drinks">
+          <img src="/images/menu/matchagreentea.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Matcha Green Tea</h3>
+            <p class="card-text text-center">ชาเขียว มัทฉะ</p>
+            <span class="price d-flex justify-content-center">35฿</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-item card category-selector" data-categories="all drinks">
+          <img src="/images/menu/houjichalatte.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Houjicha Latte</h3>
+            <p class="card-text text-center">โฮจิฉะ ลาเต้</p>
+            <span class="price d-flex justify-content-center">40฿</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all drinks">
+        <img src="/images/menu/oolongtea.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Oolong Tea</h3>
+          <p class="card-text text-center">ชาอู่หลง</p>
+          <span class="price d-flex justify-content-center">30฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all drinks">
+        <img src="/images/menu/blacktea.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Black Tea</h3>
+          <p class="card-text text-center">ชาดำ</p>
+          <span class="price d-flex justify-content-center">30฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all drinks">
+        <img src="/images/menu/whitemalt.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">White Malt</h3>
+          <p class="card-text text-center">ไวท์มอลต์</p>
+          <span class="price d-flex justify-content-center">35฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all drinks">
+        <img src="/images/menu/cocoagrassjelly.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Cocoa Grass Jelly</h3>
+          <p class="card-text text-center">เฉาก๊วยโกโก้</p>
+          <span class="price d-flex justify-content-center">45฿</span>
+        </div>
+      </div>
+    </div>
+    <div id="popup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="popup-content"></div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/category-selector.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/clickon-popup.js"></script>
+</body>
+</html>
