@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- CSS & Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/addtocart.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul class="nav-content">
+      <li class="nav-list">
+        <a href="home" class="link-item home-link">
+          <img class="link-icon" src="/images/ui/home.png">
+          <span class="link-text">Home</span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="#shop" class="link-item cart-link">
+          <img class="link-icon" src="/images/ui/cart.png">
+          <span class="link-text">Cart</span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="login" class="link-item logout">
+          <img class="link-icon" src="/images/ui/logout.png">
+          <span class="link-text"></span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="#wallet" class="link-item message-link">
+          <img class="link-icon" src="/images/ui/message.png">
+          <span class="link-text">Message</span>
+        </a>
+      </li>
+      <li class="nav-list">
+        <a href="#user" class="link-item  profile-link">
+          <img class="link-icon" src="/images/ui/profile.png">
+          <span class="link-text">Profile</span>
+        </a>
+      </li>
+      <span class="indicator"></span>
+    </ul>
+  </nav>
+  <!-- Header -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+        <div class="header d-flex justify-content-between align-items-center">
+          <a href="home2"><img src="/images/ui/backbutton.png" id="back-button"></a>
+          <h1 class="mb-0 ml-4 bold">Menu List (3)</h1>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Search Bar & Dropdown Menu -->
+  <div class="col-md-12">
+    <div class="search-bar d-flex justify-content-between align-items-center p-6">
+      <div class="d-flex justify-content-between align-items-center">
+        <input type="text" id="search-input" class="form-control ml-2" placeholder="Search for menu...">
+        <button type="button" id="search-button" class="btn btn-primary search-button">Search 🔍</button>
+        <button class="btn btn-primary dropdown-toggle category" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown">
+          <img src="/images/ui/transparent.png" class="transparent" /></button>
+        <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <!-- Dropdown Items -->
+          <a class="dropdown-item text-center" href="#" data-category="all">All food</a>
+          <a class="dropdown-item text-center" href="#" data-category="main">Main dish</a>
+          <a class="dropdown-item text-center" href="#" data-category="appetizer">Appetizer/Dessert</a>
+          <a class="dropdown-item text-center" href="#" data-category="drinks">Drinks</a>
+          <a class="dropdown-item text-center" href="#" data-category="diet">Diet</a>
+          <a class="dropdown-item text-center" href="#" data-category="promo">Promotion</a>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap mt-3 ml-2">
+      <div>
+        <div class="menu-item card category-selector" data-categories="all diet">
+          <img src="/images/menu/chickenbreastsalad.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Chicky Breast Salad</h3>
+            <p class="card-text text-center">สลัดอกไก่</p>
+            <span class="price d-flex justify-content-center">60฿</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-item card category-selector" data-categories="all diet">
+          <img src="/images/menu/mixedgreensalad.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Mixed Green Salad</h3>
+            <p class="card-text text-center">สลัดผักรวม</p>
+            <span class="price d-flex justify-content-center">60฿</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all diet">
+        <img src="/images/menu/mixedfruitsalad.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Mixed Fruit Salad</h3>
+          <p class="card-text text-center">สลัดผลไม้รวม</p>
+          <span class="price d-flex justify-content-center">60฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all diet">
+        <img src="/images/menu/tunasalad.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Tuna Salad</h3>
+          <p class="card-text text-center">สลัดทูน่า</p>
+          <span class="price d-flex justify-content-center">65฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all diet">
+        <img src="/images/menu/bakedriceandcereal.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Baked Cereals Rice</h3>
+          <p class="card-text text-center">ข้าวอบธัญพืช</p>
+          <span class="price d-flex justify-content-center">55฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all diet">
+        <img src="/images/menu/bakedmushroom.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Baked Mushrooms</h3>
+          <p class="card-text text-center">เห็ดอบ</p>
+          <span class="price d-flex justify-content-center">50฿</span>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap mt-3 ml-2">
+      <div>
+        <div class="menu-item card category-selector" data-categories="all promo">
+          <img src="/images/menu/promotion_1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Promotion 1</h3>
+            <p class="card-text text-center">1 Matcha Latte for 1 Honey Lemon!</p>
+            <span class="price d-flex justify-content-center">60฿</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-item card category-selector" data-categories="all promo">
+          <img src="/images/menu/promotion_2.jpg" class="card-img-top">
+          <div class="card-body">
+            <h3 class="card-title text-center">Promotion 2</h3>
+            <p class="card-text text-center">2 Matcha Latte for 1 Tsuyubancha!</p>
+            <span class="price d-flex justify-content-center">80฿</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all promo">
+        <img src="/images/menu/promotion_3.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Promotion 3</h3>
+          <p class="card-text text-center">2 Milky Teas for 1 Cocoa!</p>
+          <span class="price d-flex justify-content-center">75฿</span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all promo">
+        <img src="/images/menu/friedramen.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Promotion 4</h3>
+          <p class="card-text text-center">Discount 20% for Fried Ramen</p>
+          <span class="price d-flex justify-content-center">52฿<span class="discount-price">from</span><del>65฿!</del></span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all promo">
+        <img src="/images/menu/coconutcake.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Promotion 5</h3>
+          <p class="card-text text-center">Discount 10% for Coconut cake</p>
+          <span class="price d-flex justify-content-center">108฿<span class="discount-price">from</span><del>120฿!</del></span>
+        </div>
+      </div>
+      <div class="menu-item card category-selector" data-categories="all promo">
+        <img src="/images/menu/promotion.jpg" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title text-center">Free Delivery</h3>
+          <p class="card-text text-center">Buy more than 150฿ free delivery!</p>
+          <span class="price d-flex justify-content-center">LIMITED</span>
+        </div>
+      </div>
+    </div>
+    <div id="popup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="popup-content"></div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/category-selector.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/clickon-popup.js"></script>
+</body>
+</html>
