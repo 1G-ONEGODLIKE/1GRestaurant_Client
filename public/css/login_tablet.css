@@ -1,0 +1,33 @@
+/* styles for tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .logo {
+    max-width: 250px;
+    margin-top: 50px;
+  }
+
+  .text-white {
+    font-size: 24px;
+  }
+
+  .font-18 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    padding: 15px 15px;
+    margin-bottom: 15px;
+  }
+
+  .btn-success {
+    padding: 10px 15px;
+    font-size: 22px;
+  }
+
+  .mt-5 {
+    margin-top: 3rem;
+  }
+
+  .mt-15 {
+    margin-top: 8rem;
+  }
+}
