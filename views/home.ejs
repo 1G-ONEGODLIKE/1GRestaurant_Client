@@ -1,89 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Home</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- CSS & Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/home.css">
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/addtocart.css">
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <ul class="nav-content">
-      <li class="nav-list">
-        <a href="home" class="link-item home-link">
-          <img class="link-icon" src="/images/ui/home.png">
-          <span class="link-text">Home</span>
-        </a>
-      </li>
-      <li class="nav-list">
-        <a href="#shop" class="link-item cart-link">
-          <img class="link-icon" src="/images/ui/cart.png">
-          <span class="link-text">Cart</span>
-        </a>
-      </li>
-      <li class="nav-list">
-        <a href="login" class="link-item logout">
-          <img class="link-icon" src="/images/ui/logout.png">
-          <span class="link-text"></span>
-        </a>
-      </li>
-      <li class="nav-list">
-        <a href="#wallet" class="link-item message-link">
-          <img class="link-icon" src="/images/ui/message.png">
-          <span class="link-text">Message</span>
-        </a>
-      </li>
-      <li class="nav-list">
-        <a href="#user" class="link-item  profile-link">
-          <img class="link-icon" src="/images/ui/profile.png">
-          <span class="link-text">Profile</span>
-        </a>
-      </li>
-      <span class="indicator"></span>
-    </ul>
-  </nav>
-  <!-- Header -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-        <div class="header d-flex justify-content-between align-items-center">
-          <a href="login"><img src="/images/ui/backbutton.png" id="back-button"></a>
-          <h1 class="mb-0 ml-4 bold">Menu List</h1>
-          <a href="home2"><img src="/images/ui/nextbutton.png" id="next-button"></a>
-        </div>
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- CSS & Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/home.css"/>
+    <link rel="stylesheet" href="/css/navbar.css"/>
+    <link rel="stylesheet" href="/css/addtocart.css"/>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <%- include ('partials/navbar') %>
+    <!-- Header -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2">
+          <div class="header d-flex justify-content-between align-items-center">
+            <a href="login"><img src="/images/ui/backbutton.png" id="back-button"></a>
+            <h1 class="mb-0 ml-4 bold">Menu List</h1>
+            <a href="home2"><img src="/images/ui/nextbutton.png" id="next-button"></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Search Bar & Dropdown Menu -->
-  <div class="col-md-12">
-    <div class="search-bar d-flex justify-content-between align-items-center p-6">
-      <div class="d-flex justify-content-between align-items-center">
-        <input type="text" id="search-input" class="form-control ml-2" placeholder="Search for menu...">
-        <button type="button" id="search-button" class="btn btn-primary search-button">Search 🔍</button>
-        <button class="btn btn-primary dropdown-toggle category" type="button" id="dropdownMenuButton"
-          data-toggle="dropdown">
-          <img src="/images/ui/transparent.png" class="transparent" /></button>
-        <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <!-- Dropdown Items -->
-          <a class="dropdown-item text-center" href="#" data-category="all">All food</a>
-          <a class="dropdown-item text-center" href="#" data-category="main">Main dish</a>
-          <a class="dropdown-item text-center" href="#" data-category="appetizer">Appetizer/Dessert</a>
-          <a class="dropdown-item text-center" href="#" data-category="drinks">Drinks</a>
-          <a class="dropdown-item text-center" href="#" data-category="diet">Diet</a>
-          <a class="dropdown-item text-center" href="#" data-category="promo">Promotion</a>
-        </div>
-      </div>
-    </div>
+    <!-- Search Bar & Dropdown Menu -->
+    <%- include ('partials/searchbar') %>
+    <!-- Menu Items -->
     <div class="d-flex flex-wrap mt-3 ml-2">
       <div>
         <div class="menu-item card category-selector" data-categories="all main">
-          <img src="/images/menu/padthai.jpg" class="card-img-top">
+          <img src="/images/menu/padthai.jpg" class="card-img-top"/>
           <div class="card-body">
             <h3 class="card-title text-center">Pad Thai</h3>
             <p class="card-text text-center">ผัดไทย</p>
@@ -93,7 +41,7 @@
       </div>
       <div>
         <div class="menu-item card category-selector" data-categories="all main">
-          <img src="/images/menu/somtum.jpg" class="card-img-top">
+          <img src="/images/menu/somtum.jpg" class="card-img-top"/>
           <div class="card-body">
             <h3 class="card-title text-center">Somtum</h3>
             <p class="card-text text-center">ส้มตำ</p>
@@ -102,7 +50,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all main">
-        <img src="/images/menu/padkrapow.jpg" class="card-img-top">
+        <img src="/images/menu/padkrapow.jpg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">Pad Krapow (Pork)</h3>
           <p class="card-text text-center">ผัดกะเพราหมู</p>
@@ -110,7 +58,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all main">
-        <img src="/images/menu/omelette.jpg" class="card-img-top">
+        <img src="/images/menu/omelette.jpg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">Omelette</h3>
           <p class="card-text text-center">ไข่เจียว</p>
@@ -118,7 +66,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all main">
-        <img src="/images/menu/beefnoodles.jpg" class="card-img-top">
+        <img src="/images/menu/beefnoodles.jpg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">Beef Noodles</h3>
           <p class="card-text text-center">ก๋วยเตี๋ยวเนื้อ</p>
@@ -126,7 +74,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all main">
-        <img src="/images/menu/pizza.jpg" class="card-img-top">
+        <img src="/images/menu/pizza.jpg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">Pizza</h3>
           <p class="card-text text-center">พิซซ่า</p>
@@ -137,7 +85,7 @@
     <div class="d-flex flex-wrap mt-3 ml-2">
       <div>
         <div class="menu-item card category-selector" data-categories="all main">
-          <img src="/images/menu/friedchicken.jpg" class="card-img-top">
+          <img src="/images/menu/friedchicken.jpg" class="card-img-top"/>
           <div class="card-body">
             <h3 class="card-title text-center">Fried Chicken</h3>
             <p class="card-text text-center">ไก่ทอด</p>
@@ -147,7 +95,7 @@
       </div>
       <div>
         <div class="menu-item card category-selector" data-categories="all appetizer">
-          <img src="/images/menu/strawberrycake.jpg" class="card-img-top">
+          <img src="/images/menu/strawberrycake.jpg" class="card-img-top"/>
           <div class="card-body">
             <h3 class="card-title text-center">Strawberry Cake</h3>
             <p class="card-text text-center">เค้กสตรอเบอรี่</p>
@@ -156,7 +104,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all appetizer">
-        <img src="/images/menu/browniecake.jpeg" class="card-img-top">
+        <img src="/images/menu/browniecake.jpeg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">Brownie Cake</h3>
           <p class="card-text text-center">เค้กบราวนี่</p>
@@ -164,7 +112,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all appetizer">
-        <img src="/images/menu/mangostickyrice.jpg" class="card-img-top">
+        <img src="/images/menu/mangostickyrice.jpg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">Mango Sticky Rice</h3>
           <p class="card-text text-center">ข้าวเหนียวมะม่วง</p>
@@ -172,7 +120,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all appetizer">
-        <img src="/images/menu/milkbuttertoast.jpg" class="card-img-top">
+        <img src="/images/menu/milkbuttertoast.jpg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">Milk Butter Toast</h3>
           <p class="card-text text-center">ขนมปังปิ้งเนย นม น้ำตาล</p>
@@ -180,7 +128,7 @@
         </div>
       </div>
       <div class="menu-item card category-selector" data-categories="all main">
-        <img src="/images/menu/americanfriedrice.jpg" class="card-img-top">
+        <img src="/images/menu/americanfriedrice.jpg" class="card-img-top"/>
         <div class="card-body">
           <h3 class="card-title text-center">American Fried Rice</h3>
           <p class="card-text text-center">ข้าวผัดอเมริกัน</p>
@@ -205,5 +153,5 @@
     <script src="/js/category-selector.js"></script>
     <script src="/js/search.js"></script>
     <script src="/js/clickon-popup.js"></script>
-</body>
+  </body>
 </html>

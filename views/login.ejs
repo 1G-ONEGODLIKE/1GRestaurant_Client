@@ -7,9 +7,9 @@
   <!-- CSS & Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/login_desktop.css" />
-  <link rel="stylesheet" href="/css/login_mobile.css" />
-  <link rel="stylesheet" href="/css/login_tablet.css" />
+  <link rel="stylesheet" href="/css/login_desktop.css"/>
+  <link rel="stylesheet" href="/css/login_mobile.css"/>
+  <link rel="stylesheet" href="/css/login_tablet.css"/>
 </head>
 <body>
   <div class="container my-4">
@@ -23,18 +23,18 @@
         <p class="text-center text-white font-18">Your favorite meals are just a click away!</p>
         <!-- Input boxes and Login button -->
         <br>
-        <form>
+        <form action="/login" method="post">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email" id="email" />
+            <input type="text" class="form-control" name="email" placeholder="Email" id="email" required>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" id="password" />
+            <input type="password" class="form-control" name="password" placeholder="Password" id="password" required>
           </div>
           <button type="submit" class="btn btn-success btn-block mt-5">LOGIN</button>
         </form>
         <!-- Linking a signup page -->
         <div class="container text-center text-white font-18 mt-15">Don't have an account?
-          <a href="signup.html" class="d-inline-block text-black font-18 bold">Sign up now!</a>
+          <a href="signup" class="d-inline-block text-black font-18 bold">Sign up now!</a>
         </div>
       </div>
     </div>
@@ -42,6 +42,5 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="/js/login.js"></script>
 </body>
 </html>
