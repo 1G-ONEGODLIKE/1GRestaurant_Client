@@ -30,58 +30,38 @@
       <div>
         <div class="menu-item card category-selector" data-categories="all main">
           <img src="/images/menu/padthai.jpg" class="card-img-top"/>
-            <div class="card-body">
-              <h3 class="card-title text-center">Pad Thai</h3>
-              <p class="card-text text-center">ผัดไทย</p>
-              <p class="card-text text-center">Quantity: 1</p>
-              <span class="price d-flex justify-content-center">65฿</span>
-            </div>
+          <div class="card-body">
+            <h3 class="card-title text-center">Pad Thai</h3>
+            <p class="card-text text-center">ผัดไทย</p>
+            <p class="card-text text-center">Quantity: 1</p>
+            <span class="price d-flex justify-content-center">65฿</span>
+          </div>
         </div>
       </div>
-      <div class="menu-item card category-selector" data-categories="all appetizer">
-        <img src="/images/menu/mangostickyrice.jpg" class="card-img-top"/>
-        <div class="card-body">
-          <h3 class="card-title text-center">Mango Sticky Rice</h3>
-          <p class="card-text text-center">ข้าวเหนียวมะม่วง</p>
-          <p class="card-text text-center">Quantity: 2</p>
-          <span class="price d-flex justify-content-center">50฿</span>
+      <div>
+        <div class="menu-item card category-selector" data-categories="all appetizer">
+          <img src="/images/menu/mangostickyrice.jpg" class="card-img-top"/>
+          <div class="card-body">
+            <h3 class="card-title text-center">Mango Sticky Rice</h3>
+            <p class="card-text text-center">ข้าวเหนียวมะม่วง</p>
+            <p class="card-text text-center">Quantity: 2</p>
+            <span class="price d-flex justify-content-center">50฿</span>
+          </div>
         </div>
       </div>
-      <div class="menu-item card category-selector" data-categories="all drinks">
-        <img src="/images/menu/blacktea.jpg" class="card-img-top"/>
-        <div class="card-body">
-          <h3 class="card-title text-center">Black Tea</h3>
-          <p class="card-text text-center">ชาดำ</p>
-          <p class="card-text text-center">Quantity: 1</p>
-          <span class="price d-flex justify-content-center">30฿</span>
+      <div>
+        <div class="menu-item card category-selector" data-categories="all drinks">
+          <img src="/images/menu/blacktea.jpg" class="card-img-top"/>
+          <div class="card-body">
+            <h3 class="card-title text-center">Black Tea</h3>
+            <p class="card-text text-center">ชาดำ</p>
+            <p class="card-text text-center">Quantity: 1</p>
+            <span class="price d-flex justify-content-center">30฿</span>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="d-flex flex-wrap justify-content-center">
-      <div class="order-summary">
-        <h3 class="order-color custom-text text-center">Order Summary</h3>
-        <div class="order-summary-section">
-          <span class="order-color span-text ml-2">Subtotal</span>
-          <span class="order-color subtotal span-text">195฿</span>
-        </div>
-        <div class="order-summary-section">
-          <span class="order-color span-text ml-2">Delivery Charge</span>
-          <span class="order-color delivery-charge span-text">20฿</span>
-        </div>
-        <div class="order-summary-section">
-          <span class="order-color span-text ml-2">Discount</span>
-          <span class="order-color discount span-text">0฿</span>
-        </div>
-        <img src="/images/ui/line.png" class="logo mt-2 mb-1 ml-2 mr-2">
-        <div class="order-summary-section confirm">
-          <span class="order-color span-text ml-2">Total</span>
-          <span class="order-color total span-text">215฿</span>
-        </div>
-        <form action="/address" method="POST">
-          <button type="submit" id="confirm-order-btn" class="confirm-btn">Confirm My Order</button>
-        </form>
       </div>
     </div>
+    <%- include ('partials/ordersummary') %>
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/js/all.min.js"></script>
