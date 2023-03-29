@@ -155,3 +155,7 @@ body {
   position: relative;
   z-index: -1;
 }
+
+.cart {
+  margin-right: 500px;
+}

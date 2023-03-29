@@ -104,7 +104,7 @@ app.get("/addtocart", (req, res) => {
   res.render("addtocart");
 });
 
-app.post("/addtocart", (req, res) => {
+app.post("/cart", (req, res) => {
   res.render("cart");
 });
 

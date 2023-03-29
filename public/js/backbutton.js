@@ -1,5 +1,5 @@
 /* jQuery */
-// Add a click event listener to the logout link
+// Add a click event listener to the logout link from home page
 $('#back-button').click(function (e) {
   e.preventDefault(); // prevent the default action of the link
   if (confirm('Are you sure you want to logout from the application?')) {
@@ -8,7 +8,12 @@ $('#back-button').click(function (e) {
     location.href = "login"; // redirect to login page
   }
 });
-
+// Add a click event listener to the home link from cart page
+$('#back-button-cart').click(function (e) {
+  e.preventDefault(); // prevent the default action of the link
+    location.href = "home"; // back to home page
+  }
+);
 
 /* JavaScript */ 
 // Add a click event listener to the logout link
