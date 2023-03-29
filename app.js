@@ -31,63 +31,64 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", async (request, response) => {
-    try {
-      //adding
-      const email = request.body.email;
-      const password = request.body.password;
-      const usermail = db
-        .collection("users")
-        .findOne({ email: email }, (err, res) => {
-          if (res == null) {
-            // Show the message in a popup window
-            return response.send(
-              "<script>alert('Invalid account information! To gain access to the application, Please signup first.'); location.href='login'</script>"
-              );
-          } else if (err) throw err;
-          if (res.password === password) {
-            return response.send(
-              "<script>alert('You have successfully logged in. Enjoy with your meals!'); location.href='home'</script>"
-              );
-          } else {
-            // Show the message in a popup window
-            return response.send(
-              "<script>alert('The Email or password you entered is incorrect! Please try again.'); location.href='login';</script>"
-              );
-          }
-        });
-    } catch (error) {
-      // Show the message in a popup window
-      return response.send(
-        "<script>alert('Error! Please try again later.');</script>");
-    }
+  try {
+    //adding
+    const email = request.body.email;
+    const password = request.body.password;
+    const usermail = db
+      .collection("users")
+      .findOne({ email: email }, (err, res) => {
+        if (res == null) {
+          // Show the message in a popup window
+          return response.send(
+            "<script>alert('Invalid account information! To gain access to the application, Please signup first.'); location.href='login'</script>"
+          );
+        } else if (err) throw err;
+        if (res.password === password) {
+          return response.send(
+            "<script>alert('You have successfully logged in. Enjoy with your meals!'); location.href='home'</script>"
+          );
+        } else {
+          // Show the message in a popup window
+          return response.send(
+            "<script>alert('The Email or password you entered is incorrect! Please try again.'); location.href='login';</script>"
+          );
+        }
+      });
+  } catch (error) {
+    // Show the message in a popup window
+    return response.send(
+      "<script>alert('Error! Please try again later.');</script>"
+    );
+  }
 });
 
 app.get("/signup", (req, res) => {
-    res.render("signup");
+  res.render("signup");
 });
 
 app.get("/signup-success", (req, res) => {
-    res.render("signup-success");
+  res.render("signup-success");
 });
 
 app.post("/signup", async (request, response) => {
-    const name = request.body.name;
-    const email = request.body.email;
-    const password = request.body.password;
+  const name = request.body.name;
+  const email = request.body.email;
+  const password = request.body.password;
 
-    const data = {
-        "name": name,
-        "email" : email,
-        "password" : password
+  const data = {
+    name: name,
+    email: email,
+    password: password,
+  };
+  db.collection("users").insertOne(data, (err, collection) => {
+    if (err) {
+      throw err;
     }
-    db.collection('users').insertOne(data,(err,collection)=>{
-        if(err){
-            throw err;
-        }
-        console.log("Record Inserted Successfully");
-    });
-    return response.redirect("signup-success")
-})
+    console.log("Account Inserted Successfully");
+  });
+  return response.redirect("signup-success");
+});
 
 app.get("/home", (req, res) => {
   res.render("home");
@@ -111,15 +112,37 @@ app.get("/cart", (req, res) => {
 
 app.post("/cart", (req, res) => {
   return res.send(
-    "<script>alert('Your item has been added to the shopping cart!'); location.href='home';</script>")
+    "<script>alert('Your item has been added to the shopping cart!'); location.href='home';</script>"
+  );
 });
 
 app.get("/address", (req, res) => {
   res.render("address");
 });
 
-app.post("/address", (req, res) => {
-  res.render("address");
+app.get("/address-success", (req, res) => {
+  res.render("address-success");
+});
+
+app.post("/address", async (request, response) => {
+  const customername = request.body.customername;
+  const phoneno = request.body.phoneno;
+  const addressdt = request.body.addressdt;
+  const zip = request.body.zip;
+
+  const data = {
+    customername: customername,
+    phoneno: phoneno,
+    addressdt: addressdt,
+    zip: zip
+  };
+  db.collection("addresses").insertOne(data, (err, collection) => {
+    if (err) {
+      throw err;
+    }
+    console.log("Address Inserted Successfully");
+  });
+  return response.redirect("address-success");
 });
 
 app.get("/message", (req, res) => {
