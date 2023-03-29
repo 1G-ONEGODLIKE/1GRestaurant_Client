@@ -22,7 +22,9 @@
       </div>
       <br>
       <p class="total-price-font"> Total Price (ราคาทั้งหมด) : <span id="total-price"></span>฿</p>
-      <button id="add-to-cart-confirm-btn">Add to cart</button>
+      <form action="/addtocart" method="POST">
+        <button type="submit" id="add-to-cart-confirm-btn">Add to cart</button>
+      </form>
     </div>
     <div id="popup-modal" class="modal">
       <div class="modal-content">
@@ -36,5 +38,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="/js/clickon-popup.js"></script>
+    <script src="/js/addtocart.js"></script>
   </body>
 </html>

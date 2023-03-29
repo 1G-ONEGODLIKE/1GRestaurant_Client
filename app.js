@@ -41,14 +41,18 @@ app.post("/login", async (request, response) => {
           if (res == null) {
             // Show the message in a popup window
             return response.send(
-              "<script>alert('Invalid account information! To gain access to the application, Please signup first.'); location.href='login'</script>");
+              "<script>alert('Invalid account information! To gain access to the application, Please signup first.'); location.href='login'</script>"
+              );
           } else if (err) throw err;
           if (res.password === password) {
-            return response.redirect("home");
+            return response.send(
+              "<script>alert('You have successfully logged in. Enjoy with your meals!'); location.href='home'</script>"
+              );
           } else {
             // Show the message in a popup window
             return response.send(
-              "<script>alert('The Email or password you entered is incorrect! Please try again.'); location.href='login';</script>");
+              "<script>alert('The Email or password you entered is incorrect! Please try again.'); location.href='login';</script>"
+              );
           }
         });
     } catch (error) {
@@ -100,7 +104,7 @@ app.get("/addtocart", (req, res) => {
   res.render("addtocart");
 });
 
-app.get("/cart", (req, res) => {
+app.post("/addtocart", (req, res) => {
   res.render("cart");
 });
 

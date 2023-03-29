@@ -5,7 +5,7 @@ $('#back-button').click(function (e) {
   if (confirm('Are you sure you want to logout from the application?')) {
     // If the user confirms the logout, show a success message and redirect to login page
     alert("You have successfully logged out from the application.");
-    window.location.href = "login"; // redirect to login page
+    location.href = "login"; // redirect to login page
   }
 });
 
