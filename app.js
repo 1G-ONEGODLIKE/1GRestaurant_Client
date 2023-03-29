@@ -57,7 +57,8 @@ app.post("/login", async (request, response) => {
         });
     } catch (error) {
       // Show the message in a popup window
-      return response.send("<script>alert('Error! Please try again later.');</script>");
+      return response.send(
+        "<script>alert('Error! Please try again later.');</script>");
     }
 });
 
@@ -104,8 +105,29 @@ app.get("/addtocart", (req, res) => {
   res.render("addtocart");
 });
 
-app.post("/cart", (req, res) => {
+app.get("/cart", (req, res) => {
   res.render("cart");
+});
+
+app.post("/cart", (req, res) => {
+  return res.send(
+    "<script>alert('Your item has been added to the shopping cart!'); location.href='home';</script>")
+});
+
+app.get("/address", (req, res) => {
+  res.render("address");
+});
+
+app.post("/address", (req, res) => {
+  res.render("address");
+});
+
+app.get("/message", (req, res) => {
+  res.render("message");
+});
+
+app.get("/profile", (req, res) => {
+  res.render("profile");
 });
 
 // Set the server port to 3000
