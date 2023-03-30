@@ -4,14 +4,6 @@
   margin-left: 95px;
 }
 
-.container2 {
-  display: flex;
-  align-items: center;
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 10px;
-}
-
 .header-box {
   display: flex;
   flex-direction: column;
@@ -21,7 +13,7 @@
   height: 120px;
   background-color: transparent;
   border: solid;
-  border-color: red;
+  border-color: #f43f5e;
   border-radius: 25px;
 }
 
@@ -105,14 +97,14 @@
 }
 
 .ty-img {
-  margin-top: -562px;
+  margin-top: -545px;
   margin-left: 1350px;
   height: 300px;
   width: 450px;
 }
 
 .motorbike {
-  margin-top: -390px;
+  margin-top: -400px;
   margin-left: 190px;
   height: 400px;
   width: 400px;
