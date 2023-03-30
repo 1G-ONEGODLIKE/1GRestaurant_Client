@@ -5,5 +5,5 @@ contBtn.addEventListener("click", function() {
 
 const contBtn2 = document.getElementById("contBtn2");
 contBtn2.addEventListener("click", function() {
-  location.href = "address";
+  location.href = "ordermap";
 });
