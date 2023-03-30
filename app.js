@@ -1,5 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const app = express();
@@ -10,6 +12,13 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 // Use bodyParser for URL encoding
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(session({
+  secret: 'ptpofficialxd',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // update the cookie option based on your needs
+}));
 
 // Connect to 1G Database
 const db = mongoose.connection;
@@ -17,10 +26,18 @@ mongoose.connect("mongodb://0.0.0.0:27017/1G", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
 // Verify database connection
 db.on("error", () => console.log("Error in connecting to database"));
 db.once("open", () => console.log("Connected to 1G Database"));
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  password: String,
+});
+
+// Define user model
+const user = mongoose.model('user', userSchema);
 
 app.get("/", (req, res) => {
   res.render("login");
@@ -32,34 +49,23 @@ app.get("/login", (req, res) => {
 
 app.post("/login", async (request, response) => {
   try {
-    //adding
     const email = request.body.email;
     const password = request.body.password;
-    const usermail = db
-      .collection("users")
-      .findOne({ email: email }, (err, res) => {
-        if (res == null) {
-          // Show the message in a popup window
-          return response.send(
-            "<script>alert('Invalid account information! To gain access to the application, Please signup first.'); location.href='login'</script>"
-          );
-        } else if (err) throw err;
-        if (res.password === password) {
-          return response.send(
-            "<script>alert('You have successfully logged in. Enjoy with your meals!'); location.href='home'</script>"
-          );
-        } else {
-          // Show the message in a popup window
-          return response.send(
-            "<script>alert('The Email or password you entered is incorrect! Please try again.'); location.href='login';</script>"
-          );
-        }
-      });
+    db.collection("users").findOne({ email: email }, (err, user) => {
+      if (user == null) {
+        return response.send("<script>alert('Invalid account information! To gain access to the application, Please signup first.'); location.href='login'</script>");
+      } else if (err) {
+        throw err;
+      } else if (user.password !== password) {
+        return response.send("<script>alert('The Email or password you entered is incorrect! Please try again.'); location.href='login';</script>");
+      } else {
+        // set user data in session
+        request.session.user = user;
+        return response.send("<script>alert('You have successfully logged in. Enjoy with your meals!'); location.href='home'</script>");
+      }
+    });
   } catch (error) {
-    // Show the message in a popup window
-    return response.send(
-      "<script>alert('Error! Please try again later.');</script>"
-    );
+    return response.send("<script>alert('Error! Please try again later.');</script>");
   }
 });
 
@@ -75,7 +81,11 @@ app.post("/signup", async (request, response) => {
   const name = request.body.name;
   const email = request.body.email;
   const password = request.body.password;
-
+  // Check if email already exists in the database
+  const existingUser = await user.findOne({ email: email });
+  if (existingUser) {
+    return response.status(400).send("<script>alert('This email has already been registered! Please try again.'); location.href='signup';</script>");
+  }
   const data = {
     name: name,
     email: email,
@@ -91,23 +101,53 @@ app.post("/signup", async (request, response) => {
 });
 
 app.get("/home", (req, res) => {
-  res.render("home");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("home", { user });
 });
 
 app.get("/home2", (req, res) => {
-  res.render("home2");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("home2", { user });
 });
 
 app.get("/home3", (req, res) => {
-  res.render("home3");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("home3", { user });
 });
 
 app.get("/addtocart", (req, res) => {
-  res.render("addtocart");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("addtocart", { user });
 });
 
 app.get("/cart", (req, res) => {
-  res.render("cart");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("cart", { user });
 });
 
 app.post("/cart", (req, res) => {
@@ -117,11 +157,23 @@ app.post("/cart", (req, res) => {
 });
 
 app.get("/address", (req, res) => {
-  res.render("address");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("address", { user });
 });
 
 app.get("/address-success", (req, res) => {
-  res.render("address-success");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("address-success", { user });
 });
 
 app.post("/address", async (request, response) => {
@@ -129,7 +181,6 @@ app.post("/address", async (request, response) => {
   const phoneno = request.body.phoneno;
   const addressdt = request.body.addressdt;
   const zip = request.body.zip;
-
   const data = {
     customername: customername,
     phoneno: phoneno,
@@ -146,15 +197,33 @@ app.post("/address", async (request, response) => {
 });
 
 app.get("/ordermap", (req, res) => {
-  res.render("ordermap");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("ordermap", { user });
 });
 
 app.get("/message", (req, res) => {
-  res.render("message");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("message", { user });
 });
 
 app.get("/profile", (req, res) => {
-  res.render("profile");
+  const user = req.session.user;
+  // check if user is authenticated
+  if (!user) {
+    return res.redirect("/login");
+  }
+  // render the home page with the user data
+  res.render("profile", { user });
 });
 
 // Set the server port to 3000
