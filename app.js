@@ -86,6 +86,9 @@ app.post("/signup", async (request, response) => {
   if (existingUser) {
     return response.status(400).send("<script>alert('This email has already been registered! Please try again.'); location.href='signup';</script>");
   }
+  if (password.length < 6) {
+    return response.status(400).send("<script>alert('Password must be at least 6 characters long! Please try again.'); location.href='signup';</script>");
+  }
   const data = {
     name: name,
     email: email,
