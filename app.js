@@ -145,6 +145,10 @@ app.post("/address", async (request, response) => {
   return response.redirect("address-success");
 });
 
+app.get("/ordermap", (req, res) => {
+  res.render("ordermap");
+});
+
 app.get("/message", (req, res) => {
   res.render("message");
 });

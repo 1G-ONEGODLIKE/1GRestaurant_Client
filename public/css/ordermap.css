@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 95px;
+}
+
+#map {
+  position: relative;
+  height: 400px;
+  width: 1700px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text1 {
+    margin-left: 698px;
+    margin-top: 100px;
+}
+
+.text2 {
+  margin-left: 630px;
+}
+
+.text3 {
+  font-weight: normal
+}
+
+.text4 {
+  margin-left: 640px;
+  margin-top: 40px;
+}
+
+.text5 {
+  margin-left: 682px;
+}
