@@ -1,27 +1,19 @@
-# Stage 0
+# Use an official Node runtime as a parent image
+FROM node:latest
 
-FROM node:alpine as node
+# Set the working directory to /app
+WORKDIR /usr/src/app
 
-WORKDIR /app
+COPY package*.json ./
 
-COPY package*.json /app/
-
+# Install any needed packages specified in package.json
 RUN npm install
 
-COPY ./ /app/
+# Copy the current directory contents into the container at /app
+COPY . /usr/src/app
 
-ARG TARGET=ng-deploy
-
-RUN npm run ${TARGET}
-
-# Stage 1
-
-FROM nginx:1.13
-
-COPY --from=node /app/dist/ /usr/share/nginx/html
-
-COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
-
+# Make port 3000 available to the world outside this container
 EXPOSE 80
 
-CMD [ "node", "app.js" ]
+# Run the app when the container launches
+CMD ["npm", "start"]

@@ -5,4 +5,4 @@ services:
     restart: always
     image:  ptpofficialxd/1g-restaurant-client-project-main:latest
     ports:
-      - "8081:80"
+      - "2379:80"
