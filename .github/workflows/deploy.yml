@@ -36,7 +36,7 @@ jobs:
       -
         name: prepare the docker-compose run
         run: |
-              mkdir 1GRestaurantClient-project-main
+              mkdir -p 1GRestaurantClient-project-main
               cp docker-compose.yml 1g-restaurant-client-project-main/docker-compose.yml
               cd 1GRestaurantClient-project-main
               docker-compose -H ${{ secrets.HOST_SERVER  }} down
