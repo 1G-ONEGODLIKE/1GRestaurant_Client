@@ -38,7 +38,7 @@ jobs:
         run: |
               mkdir -p 1g-restaurant-client-project-main
               cp docker-compose.yml 1g-restaurant-client-project-main/docker-compose.yml
-              cd 1GRestaurantClient-project-main
+              cd 1g-restaurant-client-project-main
               docker-compose -H ${{ secrets.HOST_SERVER  }} down
               docker-compose -H ${{ secrets.HOST_SERVER  }} pull
               docker-compose -H ${{ secrets.HOST_SERVER  }} up -d
