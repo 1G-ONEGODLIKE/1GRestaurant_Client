@@ -32,12 +32,12 @@ jobs:
         with:
           context: .
           push: true
-          tags: ptpofficialxd/1GRestaurantClient-project-main:latest
+          tags: ptpofficialxd/1Grestaurant_client-project-main:latest
       -
         name: prepare the docker-compose run
         run: |
               mkdir 1GRestaurantClient-project-main
-              cp docker-compose.yml 1GRestaurantClient-project-main/docker-compose.yml
+              cp docker-compose.yml 1Grestaurant_client-project-main/docker-compose.yml
               cd 1GRestaurantClient-project-main
               docker-compose -H ${{ secrets.HOST_SERVER  }} down
               docker-compose -H ${{ secrets.HOST_SERVER  }} pull
