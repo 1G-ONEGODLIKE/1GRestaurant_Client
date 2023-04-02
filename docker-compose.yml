@@ -1,8 +1,6 @@
-version: '3'
+version: '3.8'
 services:
-  app:
-    container_name: finaldeploy-main
-    restart: always
-    image:  ptpofficialxd/1g-restaurant-client-project-main:latest
+  front-end:
+    image: ptpofficialxd/1g-restaurant-client-project-main:latest
     ports:
-      - "2379:80"
+      - '8088:80'
