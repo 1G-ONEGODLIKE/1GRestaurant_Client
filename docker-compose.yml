@@ -3,4 +3,4 @@ services:
   front-end:
     image: ptpofficialxd/1g-restaurant-client-project-main:latest
     ports:
-      - "8088:80"
+      - "8102:80"
