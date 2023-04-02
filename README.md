@@ -33,5 +33,5 @@ nodemon .\app.js
 ## Credits
 
 1GRestaurant Application was built by 
-- 642115032 Putthipong Ninwong | GitHub : ptpofficialxd
-- 642115036 Pubordee Worathan | GitHub : pubr-wthan
+- 642115032 Putthipong Ninwong | ptpofficialxd
+- 642115036 Pubordee Worathan | pubr-wthan
